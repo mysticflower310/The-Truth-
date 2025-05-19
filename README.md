@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Broken</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'VT323', monospace;
+      font-size: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #message {
+      display: none;
+      text-align: center;
+    }
+
+    a {
+      color: red;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .flicker {
+      animation: flicker 2s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 22%, 24%, 55% {
+        opacity: 0.2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="message" class="flicker">
+    if you want to know who hurt me,<br>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">click this</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('message').style.display = 'block';
+    }, 4000); // show after 4 seconds
+  </script>
+</body>
+</html>
